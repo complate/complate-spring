@@ -1,5 +1,9 @@
 # complate-spring
 
-complate-spring can can be built with Maven:
+[![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-    $ ./mvnw clean install
+
+## License
+
+complate-spring is Open Source software released under the
+[Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).
