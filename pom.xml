@@ -41,6 +41,11 @@
     <url>https://complate.org</url>
   </organization>
 
+  <ciManagement>
+    <url>https://travis-ci.org/complate/complate-spring</url>
+    <system>Travis CI</system>
+  </ciManagement>
+
   <issueManagement>
     <url>https://github.com/complate/complate-spring/issues</url>
     <system>GitHub Issues</system>
@@ -228,6 +233,7 @@
               <exclude>.gitattributes</exclude>
               <exclude>.mvn/**</exclude>
               <exclude>LICENSE*</exclude>
+              <exclude>bin/**</exclude>
               <exclude>mvnw*</exclude>
               <exclude>src/test/resources/test_bundle.js</exclude>
             </excludes>

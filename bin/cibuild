@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+#
+
+set -euo pipefail
+IFS=$'\n\t'
+
+log()   { echo "$*" >&2; }
+info()  { log "$*";      }
+warn()  { log "[!] $*";  }
+error() { log "[!!] $*"; }
+
+is_pull_request() {
+  [ "${TRAVIS_PULL_REQUEST}" != "false" ]
+}
+
+on_master() {
+  [ "${TRAVIS_BRANCH}" = "master" ]
+}
+
+MAVEN_OPTS="-Dorg.slf4j.simpleLogger.showDateTime=true"
+MAVEN_OPTS="-Djava.awt.headless=true ${MAVEN_OPTS}"
+export MAVEN_OPTS
+
+mvn() {
+  ./mvnw \
+    --batch-mode \
+    --errors \
+    --fail-at-end \
+    --no-transfer-progress \
+    --show-version \
+    "$@"
+}
+
+build_pr() {
+  mvn clean verify
+}
+
+build_master() {
+  mvn clean verify
+}
+
+build_branch() {
+  mvn clean verify
+}
+
+main() {
+  if is_pull_request; then
+    log "Building Pull Request: #${TRAVIS_PULL_REQUEST}"
+    build_pr
+  else
+    log "Building branch: ${TRAVIS_BRANCH}"
+    if on_master; then
+      build_master
+    else
+      build_branch
+    fi
+  fi
+}
+
+main "$@"
