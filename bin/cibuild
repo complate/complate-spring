@@ -17,6 +17,10 @@ on_master() {
   [ "${TRAVIS_BRANCH}" = "master" ]
 }
 
+on_primary_slave() {
+  [ "${TRAVIS_JOB_NUMBER: -2}" = ".1" ]
+}
+
 MAVEN_OPTS="-Dorg.slf4j.simpleLogger.showDateTime=true"
 MAVEN_OPTS="-Djava.awt.headless=true ${MAVEN_OPTS}"
 export MAVEN_OPTS
@@ -27,6 +31,7 @@ mvn() {
     --errors \
     --fail-at-end \
     --no-transfer-progress \
+    --update-snapshots \
     --show-version \
     "$@"
 }
@@ -36,8 +41,12 @@ build_pr() {
 }
 
 build_master() {
-  mvn clean verify
-  bash <(curl -s https://codecov.io/bash)
+  if on_primary_slave; then
+    mvn clean verify
+    bash <(curl -s https://codecov.io/bash)
+  else
+    mvn clean verify
+  fi
 }
 
 build_branch() {
