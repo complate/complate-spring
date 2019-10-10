@@ -1,7 +1,7 @@
 # complate-spring
 *- Server-Side Rendering of JSX based views in Spring MVC*
 
-[![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Build Status](https://travis-ci.org/complate/complate-spring.svg?branch=master)](https://travis-ci.org/complate/complate-spring)
+[![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Build Status](https://travis-ci.org/complate/complate-spring.svg?branch=master)](https://travis-ci.org/complate/complate-spring) [![codecov](https://codecov.io/gh/complate/complate-spring/branch/master/graph/badge.svg)](https://codecov.io/gh/complate/complate-spring)
 
 [complate](https://complate.org) adapter that can be used in
 [Spring MVC](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html)
