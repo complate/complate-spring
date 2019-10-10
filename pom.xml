@@ -36,13 +36,6 @@
     </license>
   </licenses>
 
-  <properties>
-    <java.version>1.8</java.version>
-    <maven.compiler.source>${java.version}</maven.compiler.source>
-    <maven.compiler.target>${java.version}</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
   <repositories>
     <repository>
       <id>snapshots-repo</id>
@@ -56,8 +49,35 @@
     </repository>
   </repositories>
 
+  <properties>
+    <java.version>1.8</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>4.0.1</version>
+      </dependency>
+      <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>3.13.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.complate</groupId>
+        <artifactId>complate-core</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>3.1.0</version>
+      </dependency>
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
@@ -79,7 +99,6 @@
     <dependency>
       <groupId>org.complate</groupId>
       <artifactId>complate-core</artifactId>
-      <version>0.1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
@@ -88,13 +107,11 @@
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
-      <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.13.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -110,7 +127,6 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>3.1.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -135,6 +151,35 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <dependencyConvergence/>
+                <compound implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
+                  <enforcers>POM_SECTION_ORDER,MODULE_ORDER,DEPENDENCY_MANAGEMENT_ORDER,DEPENDENCY_ORDER,DEPENDENCY_CONFIGURATION,DEPENDENCY_SCOPE,PLUGIN_MANAGEMENT_ORDER,PLUGIN_CONFIGURATION</enforcers>
+                </compound>
+                <requireJavaVersion>
+                  <version>${java.version}</version>
+                </requireJavaVersion>
+                <requireMavenVersion>
+                  <version>3.6</version>
+                </requireMavenVersion>
+                <requirePluginVersions/>
+                <requireUpperBoundDeps/>
+              </rules>
+              <fail>true</fail>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
@@ -154,6 +199,53 @@
             <failIfUnknown>true</failIfUnknown>
             <header>LICENSE_HEADER</header>
           </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>3.0.0-M2</version>
+          <dependencies>
+            <dependency>
+              <groupId>com.github.ferstl</groupId>
+              <artifactId>pedantic-pom-enforcers</artifactId>
+              <version>1.3.2</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.8.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
