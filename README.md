@@ -10,11 +10,15 @@ for Server-Side rendering JSX based views.
 
 ## Quick Start
 
-Because currently there is no version published you need to build and install
-this library locally yourself by executing
+Because there is no stable version in maven central right now you need to
+configure Sonatype's OSS Nexus as snapshot repository.
 
-```shell
-./mvnw clean install
+```xml
+<repository>
+  <id>ossrh</id>
+  <name>Sonatype OSS Snapshot Repository</name>
+  <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+</repository>
 ```
 
 Afterwards the JAR is available through Maven:
