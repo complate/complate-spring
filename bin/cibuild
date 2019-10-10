@@ -42,7 +42,7 @@ build_pr() {
 
 build_master() {
   if on_primary_slave; then
-    mvn clean verify
+    mvn clean verify sonar:sonar
     bash <(curl -s https://codecov.io/bash)
   else
     mvn clean verify
