@@ -27,7 +27,7 @@ Afterwards the JAR is available through Maven:
 <dependency>
   <groupId>org.complate</groupId>
   <artifactId>complate-spring-mvc</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.6.0-SNAPSHOT</version>
 </dependency>
 ```
 

@@ -22,7 +22,7 @@
 
   <groupId>org.complate</groupId>
   <artifactId>complate-spring-mvc</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.6.0-SNAPSHOT</version>
 
   <name>complate support for Spring MVC</name>
   <description>Spring MVC support for complate</description>
