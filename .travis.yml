@@ -12,6 +12,7 @@ script:
 cache:
   directories:
     - "$HOME/.m2"
+    - "$HOME/.sonar/cache"
 matrix:
   allow_failures:
     - jdk: openjdk-ea
