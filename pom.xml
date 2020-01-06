@@ -115,7 +115,7 @@
       <dependency>
         <groupId>org.complate</groupId>
         <artifactId>complate-core</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.1.0</version>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
@@ -217,6 +217,7 @@
                   <version>3.6</version>
                 </requireMavenVersion>
                 <requirePluginVersions/>
+                <requireReleaseDeps/>
                 <requireUpperBoundDeps/>
               </rules>
               <fail>true</fail>
