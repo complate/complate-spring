@@ -56,7 +56,7 @@ We'd like to thank all the contributors who worked on this release!
 - [@mvitz][mvitz]
 
 
-[Unreleased]: https://github.com/complate/complate-spring/compare/v0.1.0...HEAD
-[0.6.0]: https://github.com/complate/complate-spring/compare/e8d3123877be40c6b4c4a6c6a23acffd4cf8965a...v0.1.0
+[Unreleased]: https://github.com/complate/complate-spring/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/complate/complate-spring/compare/e8d3123877be40c6b4c4a6c6a23acffd4cf8965a...v0.6.0
 
 [mvitz]: https://github.com/mvitz
