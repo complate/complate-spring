@@ -10,24 +10,13 @@ for Server-Side rendering JSX based views.
 
 ## Quick Start
 
-Because there is no stable version in maven central right now you need to
-configure Sonatype's OSS Nexus as snapshot repository.
-
-```xml
-<repository>
-  <id>ossrh</id>
-  <name>Sonatype OSS Snapshot Repository</name>
-  <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-</repository>
-```
-
-Afterwards the JAR is available through Maven:
+Download the jar through Maven:
 
 ```xml
 <dependency>
   <groupId>org.complate</groupId>
   <artifactId>complate-spring-mvc</artifactId>
-  <version>0.6.0-SNAPSHOT</version>
+  <version>0.6.0</version>
 </dependency>
 ```
 

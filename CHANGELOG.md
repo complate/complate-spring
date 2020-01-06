@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [0.6.0] - 2020-01-06
+
 This release is the successor of the last
 [complate-spring-mvc](https://github.com/complate/complate-spring-mvc) release.
 
@@ -53,6 +56,7 @@ We'd like to thank all the contributors who worked on this release!
 - [@mvitz][mvitz]
 
 
-[Unreleased]: https://github.com/complate/complate-spring/compare/e8d3123877be40c6b4c4a6c6a23acffd4cf8965a...HEAD
+[Unreleased]: https://github.com/complate/complate-spring/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/complate/complate-spring/compare/e8d3123877be40c6b4c4a6c6a23acffd4cf8965a...v0.1.0
 
 [mvitz]: https://github.com/mvitz
