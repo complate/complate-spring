@@ -95,7 +95,6 @@
 
   <properties>
     <java.version>1.8</java.version>
-    <maven.compiler.failOnWarning>true</maven.compiler.failOnWarning>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
     <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
     <maven.compiler.source>${java.version}</maven.compiler.source>
