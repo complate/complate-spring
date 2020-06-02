@@ -54,20 +54,24 @@ public class ComplateConfiguration {
         /*
          * Note that it's possible to add global bindings that can be accessed
          * from your JSX views by providing a `Map<String, Object>` as second
-         * argument to `NashornComplateRenderer`.
+         * argument to `GraalComplateRenderer`.
          *
-         * Because `NashornComplateRenderer` only evaluates the given `ComplateSource`
+         * Because `GraalComplateRenderer` only evaluates the given `ComplateSource`
          * on instantiation changes made to this source afterwards will not be
          * picked up. If you want to re-evaluate the `ComplateSource` on every call
-         * to `render` you can wrap the `NashornComplateRenderer` within an
+         * to `render` you can wrap the `GraalComplateRenderer` within an
          * `ComplateReEvaluatingRenderer`.
          *
          * If you encounter problems that may be related with the multi threaded
-         * nature of a Spring web application you can wrap the `NashornComplateRenderer`
+         * nature of a Spring web application you can wrap the `GraalComplateRenderer`
          * (or `ComplateReEvaluatingRenderer`) within an `ComplateThreadLocalRenderer`.
          * This will create an instance that is exclusively used within a thread.
+         *
+         * If you do not want to use the Graal base renderer for the time being
+         * there is a `NashornComplateRenderer`, too. Note that this will not work
+         * with a more recent JDK because Nashorn was removed.
          */
-        return new NashornComplateRenderer(source);
+        return new GraalComplateRenderer(source);
     }
 
     @Bean
