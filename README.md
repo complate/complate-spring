@@ -77,6 +77,17 @@ public class ComplateConfiguration {
 }
 ```
 
+If you want to use the latest unstable version `0.7.0-SNAPSHOT` you need to
+configure Sonatype's OSS Nexus as snapshot repository:
+
+```xml
+<repository>
+  <id>ossrh</id>
+  <name>Sonatype OSS Snapshot Repository</name>
+  <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+</repository>
+```
+
 
 ## Release History
 
