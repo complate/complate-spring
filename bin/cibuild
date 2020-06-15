@@ -13,11 +13,11 @@ is_pull_request() {
   [ "${TRAVIS_PULL_REQUEST}" != "false" ]
 }
 
-on_master() {
-  [ "${TRAVIS_BRANCH}" = "master" ]
+on_main() {
+  [ "${TRAVIS_BRANCH}" = "main" ]
 }
 
-on_primary_slave() {
+on_primary_job() {
   [ "${TRAVIS_JOB_NUMBER: -2}" = ".1" ]
 }
 
@@ -40,8 +40,8 @@ build_pr() {
   mvn clean verify
 }
 
-build_master() {
-  if on_primary_slave; then
+build_main() {
+  if on_primary_job; then
     mvn clean verify sonar:sonar
     bash <(curl -s https://codecov.io/bash)
   else
@@ -59,8 +59,8 @@ main() {
     build_pr
   else
     log "Building branch: ${TRAVIS_BRANCH}"
-    if on_master; then
-      build_master
+    if on_main; then
+      build_main
     else
       build_branch
     fi
