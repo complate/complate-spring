@@ -16,7 +16,7 @@
 package org.complate.spring.mvc;
 
 import org.complate.core.ComplateRenderer;
-import org.complate.nashorn.NashornComplateRenderer;
+import org.complate.graal.GraalComplateRenderer;
 import org.complate.spring.source.ResourceComplateSource;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -63,13 +63,11 @@ class ComplateViewTests {
     @Nested
     class WithExistingSource {
 
-        ComplateRenderer renderer = new NashornComplateRenderer(
-            new ResourceComplateSource(new ClassPathResource("/test_bundle.js")),
-            new HashMap<String, Object>() {{
-                put("constantBinding", "World");
-                put("functionBinding", new FunctionBinding());
-            }}
-        );
+        ComplateRenderer renderer = GraalComplateRenderer
+            .of(new ResourceComplateSource(new ClassPathResource("/test_bundle.js")))
+            .withBinding("constantBinding", "World")
+            .withBinding("functionBinding", new FunctionBinding())
+            .build();
 
         Map<String, Object> model = new HashMap<>();
         MockHttpServletRequest request = new MockHttpServletRequest();
