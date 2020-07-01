@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+This release updates complate-core which contains a new renderer that uses the
+Graal JavaScript engine.
+
+### 📣 Notes
+- See [`complate-core`s CHANGELOG](https://github.com/complate/complate-java/blob/main/CHANGELOG.md)
+  for the new Graal based renderer.
+
+### ❤️ Contributors
+
+We'd like to thank all the contributors who worked on this release!
+
+- [@mvitz][mvitz]
+
 
 ## [0.6.0] - 2020-01-06
 

@@ -52,9 +52,8 @@ public class ComplateConfiguration {
     @Bean
     public ComplateRenderer complateRenderer(ComplateSource source) {
         /*
-         * Note that it's possible to add global bindings that can be accessed
-         * from your JSX views by providing a `Map<String, Object>` as second
-         * argument to `GraalComplateRenderer`.
+         * Note that it's possible to add global bindings or customize other
+           options via the builder for the GraalComplateRenderer.
          *
          * Because `GraalComplateRenderer` only evaluates the given `ComplateSource`
          * on instantiation changes made to this source afterwards will not be
@@ -71,7 +70,7 @@ public class ComplateConfiguration {
          * there is a `NashornComplateRenderer`, too. Note that this will not work
          * with a more recent JDK because Nashorn was removed.
          */
-        return new GraalComplateRenderer(source);
+        return new GraalComplateRenderer.of(source).build();
     }
 
     @Bean
