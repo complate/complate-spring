@@ -53,7 +53,7 @@ public class ComplateConfiguration {
     public ComplateRenderer complateRenderer(ComplateSource source) {
         /*
          * Note that it's possible to add global bindings or customize other
-           options via the builder for the GraalComplateRenderer.
+         * options via the builder for the GraalComplateRenderer.
          *
          * Because `GraalComplateRenderer` only evaluates the given `ComplateSource`
          * on instantiation changes made to this source afterwards will not be
