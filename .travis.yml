@@ -5,17 +5,12 @@ install: true
 jdk:
   - openjdk8
   - openjdk11
-  - openjdk13
-  - openjdk-ea
 script:
   - "./bin/cibuild"
 cache:
   directories:
     - "$HOME/.m2"
     - "$HOME/.sonar/cache"
-matrix:
-  allow_failures:
-    - jdk: openjdk-ea
 addons:
   sonarcloud:
     organization: "complate"
