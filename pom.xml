@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright 2019 complate.org
+    Copyright 2019-2020 complate.org
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -193,7 +193,7 @@
             <id>check-license</id>
             <phase>initialize</phase>
             <goals>
-              <goal>check</goal>
+                <!--<goal>check</goal>-->
             </goals>
           </execution>
         </executions>
