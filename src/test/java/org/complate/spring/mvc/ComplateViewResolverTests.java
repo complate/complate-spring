@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 complate.org
+ * Copyright 2019-2020 complate.org
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.complate.spring.mvc;
 
+import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.complate.core.ComplateRenderer;
 import org.complate.core.ComplateStream;
 import org.junit.jupiter.api.Test;
@@ -26,30 +27,32 @@ import static java.util.Collections.emptyMap;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.only;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 class ComplateViewResolverTests {
 
     @Test
     void new_withNullRenderer_throwsException() {
-        assertThatThrownBy(() -> new ComplateViewResolver(null))
+        // when
+        ThrowingCallable createViewResolver = () -> new ComplateViewResolver(null);
+
+        // then
+        assertThatThrownBy(createViewResolver)
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("renderer must not be null");
     }
 
     @Test
     void resolveViewName_returnsViewWithConfiguredRendererAndGivenViewName() throws Exception {
-        // arrange
+        // given
         ComplateRenderer renderer = mock(ComplateRenderer.class);
 
         ComplateViewResolver sut = new ComplateViewResolver(renderer);
 
-        // act
+        // when
         View view = sut.resolveViewName("some-view", null);
 
-        // assert
+        // then
         view.render(emptyMap(), new MockHttpServletRequest(), new MockHttpServletResponse());
         verify(renderer, only()).render(eq("some-view"), eq(emptyMap()), any(ComplateStream.class));
     }

@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 complate.org
+ * Copyright 2019-2020 complate.org
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package org.complate.spring.mvc;
 
+import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.complate.core.ComplateRenderer;
 import org.complate.graal.GraalComplateRenderer;
 import org.complate.spring.source.ResourceComplateSource;
@@ -35,27 +36,35 @@ class ComplateViewTests {
 
     @Test
     void new_withNullRenderer_throwsException() {
-        assertThatThrownBy(() -> new ComplateView(null, "some-view"))
+        // when
+        ThrowingCallable createView = () -> new ComplateView(null, "some-view");
+
+        // then
+        assertThatThrownBy(createView)
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("renderer must not be null");
     }
 
     @Test
     void new_withNullView_throwsException() {
-        assertThatThrownBy(() -> new ComplateView(mock(ComplateRenderer.class), null))
+        // when
+        ThrowingCallable createView = () -> new ComplateView(mock(ComplateRenderer.class), null);
+
+        // then
+        assertThatThrownBy(createView)
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("view must not be null");
     }
 
     @Test
     void getContentType_returnsTextHtmlUtf8() {
-        // arrange
+        // given
         ComplateView sut = new ComplateView(mock(ComplateRenderer.class), "some-view");
 
-        // act
+        // when
         String contentType = sut.getContentType();
 
-        // assert
+        // then
         assertThat(contentType)
             .isEqualTo("text/html; charset=UTF-8");
     }
@@ -75,53 +84,53 @@ class ComplateViewTests {
 
         @Test
         void render_setsCorrectContentType() throws Exception {
-            // arrange
+            // given
             ComplateView sut = new ComplateView(renderer, "SomeView");
 
-            // act
+            // when
             sut.render(model, request, response);
 
-            // assert
+            // then
             assertThat(response.getContentType())
                 .isEqualTo("text/html; charset=UTF-8");
         }
 
         @Test
         void render_rendersCorrectView() throws Exception {
-            // arrange
+            // given
             ComplateView sut = new ComplateView(renderer, "StaticView");
 
-            // act
+            // when
             sut.render(model, request, response);
 
-            // assert
+            // then
             assertThat(response.getContentAsString())
                 .isEqualTo("Render view: StaticView");
         }
 
         @Test
         void render_hasAccessToModel() throws Exception {
-            // arrange
+            // given
             ComplateView sut = new ComplateView(renderer, "ModelView");
             model.put("title", "ვეპხის ტყაოსანი შოთა რუსთაველი");
 
-            // act
+            // when
             sut.render(model, request, response);
 
-            // assert
+            // then
             assertThat(response.getContentAsString())
                 .isEqualTo("View ModelView with params.title=ვეპხის ტყაოსანი შოთა რუსთაველი");
         }
 
         @Test
         void render_hasAccessToBindings() throws Exception {
-            // arrange
+            // given
             ComplateView sut = new ComplateView(renderer, "BindingView");
 
-            // act
+            // when
             sut.render(model, request, response);
 
-            // assert
+            // then
             assertThat(response.getContentAsString())
                 .isEqualTo("View BindingView with functionBinding.greet=Hello, World!");
         }
