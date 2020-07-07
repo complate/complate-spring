@@ -22,7 +22,7 @@
 
   <groupId>org.complate</groupId>
   <artifactId>complate-spring-mvc</artifactId>
-  <version>0.7.0-SNAPSHOT</version>
+  <version>0.7.0</version>
 
   <name>complate support for Spring MVC</name>
   <description>Spring MVC support for complate</description>
@@ -118,7 +118,7 @@
       <dependency>
         <groupId>org.complate</groupId>
         <artifactId>complate-core</artifactId>
-        <version>0.2.0-SNAPSHOT</version>
+        <version>0.2.0</version>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
@@ -220,6 +220,7 @@
                   <version>3.6</version>
                 </requireMavenVersion>
                 <requirePluginVersions/>
+                <requireReleaseDeps/>
                 <requireUpperBoundDeps/>
               </rules>
               <fail>true</fail>

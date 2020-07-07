@@ -16,7 +16,7 @@ Download the jar through Maven:
 <dependency>
   <groupId>org.complate</groupId>
   <artifactId>complate-spring-mvc</artifactId>
-  <version>0.6.0</version>
+  <version>0.7.0</version>
 </dependency>
 ```
 
@@ -80,7 +80,7 @@ public class ComplateConfiguration {
 }
 ```
 
-If you want to use the latest unstable version `0.7.0-SNAPSHOT` you need to
+If you want to use the latest unstable version `0.8.0-SNAPSHOT` you need to
 configure Sonatype's OSS Nexus as snapshot repository:
 
 ```xml
