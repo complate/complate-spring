@@ -17,10 +17,6 @@ on_main() {
   [ "${TRAVIS_BRANCH}" = "main" ]
 }
 
-on_primary_job() {
-  [ "${TRAVIS_JOB_NUMBER: -2}" = ".1" ]
-}
-
 MAVEN_OPTS="-Dorg.slf4j.simpleLogger.showDateTime=true"
 MAVEN_OPTS="-Djava.awt.headless=true ${MAVEN_OPTS}"
 export MAVEN_OPTS
@@ -41,12 +37,8 @@ build_pr() {
 }
 
 build_main() {
-  if on_primary_job; then
-    mvn clean verify sonar:sonar
-    bash <(curl -s https://codecov.io/bash)
-  else
-    mvn clean verify
-  fi
+  mvn clean verify sonar:sonar
+  bash <(curl -s https://codecov.io/bash)
 }
 
 build_branch() {
