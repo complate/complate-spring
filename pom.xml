@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright 2019-2020 complate.org
+    Copyright 2019-2021 complate.org
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -216,7 +216,7 @@
                   <version>[11,12)</version>
                 </requireJavaVersion>
                 <requireMavenVersion>
-                  <version>3.6</version>
+                  <version>3.8</version>
                 </requireMavenVersion>
                 <requirePluginVersions/>
                 <requireUpperBoundDeps/>
