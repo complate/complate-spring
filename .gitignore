@@ -4,3 +4,6 @@ target/
 # IntelliJ
 *.iml
 .idea/
+
+# SDKMAN
+.sdkmanrc
