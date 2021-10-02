@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 🔨 Dependency Upgrades
+- Upgrade to Spring Framework 5.2.15 (latest baseline of Spring Boot 2.3.x)
+
+### ❤️ Contributors
+
+We'd like to thank all the contributors who worked on this release!
+
+- [@mvitz][mvitz]
+
 
 ## [0.7.0] - 2020-07-07
 
