@@ -114,14 +114,14 @@
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-framework-bom</artifactId>
-        <version>5.2.15.RELEASE</version>
+        <version>6.0.4</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>4.0.1</version>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>6.0.0</version>
       </dependency>
       <dependency>
         <groupId>org.assertj</groupId>
@@ -131,7 +131,12 @@
       <dependency>
         <groupId>org.complate</groupId>
         <artifactId>complate-core</artifactId>
-        <version>0.3.0-SNAPSHOT</version>
+        <version>0.4.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.complate</groupId>
+        <artifactId>complate-graal</artifactId>
+        <version>0.4.0-SNAPSHOT</version>
       </dependency>
       <dependency>
         <groupId>org.mockito</groupId>
@@ -147,12 +152,16 @@
       <artifactId>complate-core</artifactId>
     </dependency>
     <dependency>
+      <groupId>org.complate</groupId>
+      <artifactId>complate-graal</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -213,7 +222,7 @@
                   <enforcers>POM_SECTION_ORDER,MODULE_ORDER,DEPENDENCY_MANAGEMENT_ORDER,DEPENDENCY_ORDER,DEPENDENCY_CONFIGURATION,DEPENDENCY_SCOPE,PLUGIN_MANAGEMENT_ORDER,PLUGIN_CONFIGURATION</enforcers>
                 </compound>
                 <requireJavaVersion>
-                  <version>[11,12)</version>
+                  <version>[17,)</version>
                 </requireJavaVersion>
                 <requireMavenVersion>
                   <version>3.8</version>
