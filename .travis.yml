@@ -9,9 +9,3 @@ script:
 cache:
   directories:
     - "$HOME/.m2"
-    - "$HOME/.sonar/cache"
-addons:
-  sonarcloud:
-    organization: "complate"
-    token:
-      secure: "Mr/YyTV4LuR8fRJhx5A7/HDQj0UYYnJE9RlEYcHkjGa1M+zqjLpH2mZBNdh2I8c3GXpT4IweN41pEZpWNPJkPkifohkjzgOXAk7OEzA3zIYFQHV/7N0DIhBvKAeo05f5u6+/HEt2WalwTT5LUQsFxc3YIjDeBiZwgisQbxV5etXsvbi69IRMvpdPM3fybf22Xy2gg4JkMewSVtQvhOLR3KPLbmWT/pJEXZUmusDc7Jp/++w6+yFrWCDbOKjmqO60bAxSwB2Pc8ZrdUODhz7aUv4YqPQepTj4nbxZcv6tzTRmI1GfBJs1UvDXPatf8mms6SW+Qn0cD9HRYm1M3Dzgi5UWOSNZ5d0JxrJ9LY904vC8TF2rYn7BFQuAlikmfpdQ6w5uwkcLe9L2a2vovOBh5lQ7+HL/Ts2HQKFj91KPBnnNm4Ka+iUSjXJ2mStOhtcj7goVWVxMIN6JonmDTA8Kz5rR98u5BPmQh79beVIoAS+0jYMDvBVtQo2+7o36bBgpygtDRUE/XkQEBKOe3TdbcLqUcTE0+m/8s2Z0PUHPdY0Gibi58C30svGV3K96FW1WE71KhDrLpidBOZCMoUqFY4x8sTPcRD46v3aWgd32qKC4jKM+HdNXvlgsqagKle0I6cBaupiQ1G5HaDza0BMiJMc83jlZLEX1AdRrhdWUPpE="

@@ -37,7 +37,7 @@ build_pr() {
 }
 
 build_main() {
-  mvn clean verify sonar:sonar
+  mvn clean verify
   bash <(curl -s https://codecov.io/bash)
 }
 
