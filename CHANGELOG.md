@@ -7,14 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### 📣 Notes
+- requireJavaVersion is now >=17
+
 ### 🔨 Dependency Upgrades
-- Upgrade to Spring Framework 5.2.15 (latest baseline of Spring Boot 2.3.x)
+- Upgrade to Spring Framework 6.0.4 (the latest baseline of Spring Boot 3.0.X)
+- Upgrade to servlet version 6.0.0
 
 ### ❤️ Contributors
-
 We'd like to thank all the contributors who worked on this release!
 
 - [@mvitz][mvitz]
+- [@cj-innoq][cj-innoq]
 
 
 ## [0.7.0] - 2020-07-07
