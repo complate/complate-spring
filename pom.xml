@@ -42,8 +42,8 @@
   </organization>
 
   <ciManagement>
-    <url>https://travis-ci.org/complate/complate-spring</url>
-    <system>Travis CI</system>
+    <url>https://github.com/complate/complate-spring/actions</url>
+    <system>GitHub Actions</system>
   </ciManagement>
 
   <issueManagement>
