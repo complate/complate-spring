@@ -1,0 +1,12 @@
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      # Ignore all Spring Framework updates because it is aligned to Spring Boot
+      - dependency-name: "org.springframework:spring-framework-bom"
+      # Ignore all Servlet API updates because it is aligned to Spring Boot
+      - dependency-name: "jakarta.servlet:jakarta.servlet-api"
