@@ -13,6 +13,7 @@ MAVEN_OPTS="-Djava.awt.headless=true ${MAVEN_OPTS}"
 export MAVEN_OPTS
 
 ./mvnw \
+    --activate-profiles coverage \
     --batch-mode \
     --errors \
     --fail-at-end \
