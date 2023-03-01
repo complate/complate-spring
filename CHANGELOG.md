@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [1.0.0] - 2023-03-01
+
+This release requires Spring Boot 3.0.x as baseline, which results into the
+following breaking changes:
+
+- This library is now build with JDK 17 which means the application needs to be
+  build with at least JDK 17, too.
+- This library now dependens on the Servlet API within the jakarta namespace
+  which requires the application to depent on this, too.
+
+Additionally the `complate-core` is updated to version `1.0.0` which was split
+into separate modules for supported engines. This means you need to declare an
+explicit dependency on the engine (currently Graal or Nashorn) that you want to
+use.
+
 ### 🔨 Dependency Upgrades
 - Upgrade `complate-core` to 1.0.0
 - Upgrade JDK baseline to 17 (latest baseline of Spring Boot 3.0.x)
