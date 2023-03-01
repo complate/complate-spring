@@ -223,15 +223,17 @@
         <artifactId>maven-enforcer-plugin</artifactId>
         <executions>
           <execution>
-            <id>enforce</id>
+            <id>common</id>
             <goals>
               <goal>enforce</goal>
             </goals>
             <configuration>
               <rules>
-                <dependencyConvergence/>
+                <banDependencyManagementScope />
+                <banDuplicatePomDependencyVersions />
+                <dependencyConvergence />
                 <compound implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
-                  <enforcers>POM_SECTION_ORDER,MODULE_ORDER,DEPENDENCY_MANAGEMENT_ORDER,DEPENDENCY_ORDER,DEPENDENCY_CONFIGURATION,DEPENDENCY_SCOPE,PLUGIN_MANAGEMENT_ORDER,PLUGIN_CONFIGURATION</enforcers>
+                  <enforcers>POM_SECTION_ORDER,DEPENDENCY_MANAGEMENT_ORDER,DEPENDENCY_ORDER,DEPENDENCY_CONFIGURATION,DEPENDENCY_ELEMENT,PLUGIN_MANAGEMENT_ORDER,PLUGIN_CONFIGURATION,PLUGIN_ELEMENT</enforcers>
                 </compound>
                 <requireJavaVersion>
                   <version>[17,18)</version>
@@ -239,10 +241,10 @@
                 <requireMavenVersion>
                   <version>[3.9,3.10)</version>
                 </requireMavenVersion>
-                <requirePluginVersions/>
-                <requireUpperBoundDeps/>
+                <requirePluginVersions />
+                <requireProfileIdsExist />
+                <requireUpperBoundDeps />
               </rules>
-              <fail>true</fail>
             </configuration>
           </execution>
         </executions>
