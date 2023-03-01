@@ -24,6 +24,18 @@ Download the jar through Maven:
 </dependency>
 ```
 
+Additionally you need to declare a second dependency to your desired complate
+engine (Graal, Nashorn, ...).
+
+```xml
+<dependency>
+  <groupId>org.complate</groupId>
+  <artifactId>complate-graal</artifactId>
+  <!-- or: <artifactId>complate-nashorn</artifactId> -->
+  <version>1.0.0</version>
+</dependency>
+```
+
 To configure the relevant parts within your Spring Boot application you need to
 add a configuration class like the one shown below.
 
