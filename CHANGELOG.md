@@ -7,18 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### 📣 Notes
-- requireJavaVersion is now >=17
-
 ### 🔨 Dependency Upgrades
-- Upgrade to Spring Framework 6.0.4 (the latest baseline of Spring Boot 3.0.X)
-- Upgrade to servlet version 6.0.0
+- Upgrade `complate-core` to 1.0.0
+- Upgrade JDK baseline to 17 (latest baseline of Spring Boot 3.0.x)
+- Upgrade Spring Framework to 6.0.x (latest baseline of Spring Boot 3.0.x)
+- Upgrade Servlet API to jakarta namespace and version 6 (latest baseline of Spring Boot 3.0.x)
 
 ### ❤️ Contributors
+
 We'd like to thank all the contributors who worked on this release!
 
-- [@mvitz][mvitz]
 - [@cj-innoq][cj-innoq]
+- [@mvitz][mvitz]
 
 
 ## [0.7.0] - 2020-07-07
@@ -89,4 +89,5 @@ We'd like to thank all the contributors who worked on this release!
 [0.7.0]: https://github.com/complate/complate-spring/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/complate/complate-spring/compare/e8d3123877be40c6b4c4a6c6a23acffd4cf8965a...v0.6.0
 
+[cj-innoq]: https://github.com/cj-innoq
 [mvitz]: https://github.com/mvitz
