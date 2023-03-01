@@ -321,14 +321,12 @@
           <artifactId>maven-release-plugin</artifactId>
           <version>3.0.0-M7</version>
           <configuration>
-            <addSchema>false</addSchema>
-            <goals>deploy</goals>
             <pushChanges>false</pushChanges>
             <releaseProfiles>coverage,release</releaseProfiles>
+            <scmDevelopmentCommitComment>Prepare for next development iteration</scmDevelopmentCommitComment>
             <scmReleaseCommitComment>Release @{releaseLabel}</scmReleaseCommitComment>
             <signTag>true</signTag>
             <tagNameFormat>v@{project.version}</tagNameFormat>
-            <useReleaseProfile>false</useReleaseProfile>
           </configuration>
         </plugin>
         <plugin>
