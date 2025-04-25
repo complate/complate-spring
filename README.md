@@ -101,9 +101,15 @@ configure Sonatype's OSS Nexus as snapshot repository:
 
 ```xml
 <repository>
-  <id>ossrh</id>
-  <name>Sonatype OSS Snapshot Repository</name>
-  <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+  <name>Central Portal Snapshots</name>
+  <id>central-portal-snapshots</id>
+  <url>https://central.sonatype.com/repository/maven-snapshots/</url>
+  <releases>
+    <enabled>false</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
 </repository>
 ```
 
