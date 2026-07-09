@@ -5,7 +5,6 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Open Issues](https://img.shields.io/github/issues/complate/complate-spring.svg)](https://github.com/complate/complate-spring/issues)
 [![Build Status](https://github.com/complate/complate-spring/actions/workflows/main.yml/badge.svg)](https://github.com/complate/complate-spring/actions/workflows/main.yml)
-[![Code Coverage](https://codecov.io/gh/complate/complate-spring/branch/main/graph/badge.svg)](https://codecov.io/gh/complate/complate-spring)
 
 [complate](https://complate.org) adapter that can be used in
 [Spring MVC](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html)
