@@ -224,7 +224,7 @@
                   <version>[17,18)</version>
                 </requireJavaVersion>
                 <requireMavenVersion>
-                  <version>[3.9,3.10)</version>
+                  <version>[3.10,3.11)</version>
                 </requireMavenVersion>
                 <requirePluginVersions />
                 <requireProfileIdsExist />
